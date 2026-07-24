@@ -6,7 +6,8 @@ const head = (
     borderRadius: "100%", 
     border: "10px solid black", 
     position: "absolute", 
-    top: "50px", right: "-30 px"}}
+    top: "50px", 
+    right: "-30px"}}
 />
 )
 
@@ -16,7 +17,8 @@ const body = (
     height: "100px", 
     background: "black",
     position: "absolute", 
-    top: "120px"}}
+    top: "120px",
+    right: "0px"}}
 />
 )
 
@@ -26,8 +28,9 @@ const rightArm = (
     height: "10px", 
     background: "black", 
     position: "absolute", 
-    top: "150px", right: "-100 px",
-    rotate: "30deg",
+    top: "150px", 
+    right: "-90px",
+    rotate: "-30deg",
     }} 
     />
 )
@@ -38,7 +41,8 @@ const leftArm = (
     height: "10px", 
     background: "black", 
     position: "absolute", 
-    top: "150px", right: "100 px",
+    top: "150px", 
+    right: "0px",
     rotate: "30deg",
     }} 
     />
@@ -50,7 +54,8 @@ const rightLeg = (
     height: "10px",  
     background: "black", 
     position: "absolute", 
-    top: "210px", right: "-90 px",
+    top: "235px", 
+    right: "-90px",
     rotate: "30deg",
     }}
 />
@@ -62,29 +67,29 @@ const leftLeg = (
     height: "10px",  
     background: "black", 
     position: "absolute", 
-    top: "210px", right: "-90 px",
+    top: "235px",
+    right: "0px", 
     rotate: "-30deg",
     }}
 />
 )
 
 export function HangmanDrawing() {
-    return  <div style={{position: "relative"}}>
+    return  (
+    <div style={{position: "relative"}}>  
         {head}
         {body}
-        {leftArm}
         {rightArm}
-        {leftLeg}
+        {leftArm}
         {rightLeg}
-    
-
-        <div style={{ position: "relative"}}>
+        {leftLeg}
+        
             <div style={{height:"50px", width: "10px", background: "black", position: "absolute", top:0, right:0}} />
             <div style={{height:"10px", width:"200px", background:"black", marginLeft:"120px"}} />
             <div style={{height:"400px", width: "10px", background:"black", marginLeft:"120px"}} />
             <div style={{height:"10px", width:"250px", background: "black"}} />
-        </div>
-    </div> 
+        </div> 
+    )
 }  
 
 export default HangmanDrawing
