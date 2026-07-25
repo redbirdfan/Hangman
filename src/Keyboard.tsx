@@ -1,4 +1,6 @@
-const key = [
+import styles from "./keyboard.css"
+
+const letters = [
     "a",
     "b",
     "c",
@@ -29,13 +31,13 @@ const key = [
 export function Keyboard(){
     return (
         <div style={{display:"grid", 
-                    gridTemplateColumns:"repeat(auto-fix, minmax(75px, 1fr))", 
+                    gridTemplateColumns:"repeat(auto-fit, minmax(75px, 1fr))", 
                     gap:".5rem"
                 }}            
         >
-            {keys.map(key=> {
+            {letters.map(key=> {
                 return (
-                    <button key={key}>{key}</button>
+                    <button className={styles.btn} key={key}>{key}</button>
                 )
             })}
         </div>
