@@ -55,7 +55,7 @@ function App() {
           }}
       >
         <div style={{ fontSize: "2rem", textAlign: "center" }}>
-          Lose Win
+          {incorrectLetters.length==6 && <div>You Lose!</div>}
         </div>
         <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
         <HangmanWord guessedLetters={guessedLetters} wordToGuess={wordToGuess}/>
