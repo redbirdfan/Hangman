@@ -34,6 +34,7 @@ const letters = [
     "z"
 ]
 export function Keyboard({activeLetters, inactiveLetters, addGuessedLetter} : keyboardProps) {
+    
     return (
         <div style={{display:"grid", 
                     gridTemplateColumns:"repeat(auto-fit, minmax(75px, 1fr))", 
@@ -48,7 +49,11 @@ export function Keyboard({activeLetters, inactiveLetters, addGuessedLetter} : ke
                     <button onClick ={()=> addGuessedLetter(key)} 
                             className={`${styles.btn} ${isActive ? styles.active : ""} ${isInActive ? styles.inactive : ""}
                             `} 
-                            key={key}>{key}</button>
+                            disabled = {isInActive || isActive}
+                            
+                            key={key}>
+                        {key}
+                        </button>
                 )
             })}
         </div>

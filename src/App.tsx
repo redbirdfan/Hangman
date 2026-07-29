@@ -18,6 +18,8 @@ function App() {
     !wordToGuess.includes(letter)
   )
 
+  const isWinner = wordToGuess.split("").every(letter => guessedLetters.includes(letter))
+
   const addGuessedLetter = useCallback((letter: string) => {
     if(guessedLetters.includes(letter)) return
 
@@ -54,6 +56,7 @@ function App() {
       >
         <div style={{ fontSize: "2rem", textAlign: "center" }}>
           {incorrectLetters.length==6 && <div style={{color:"red", fontWeight:"bold"}}>You Lose!</div>}
+          {isWinner === true && <div>Winner!!!</div>}
         </div>
         <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
         <HangmanWord guessedLetters={guessedLetters} wordToGuess={wordToGuess}/>
