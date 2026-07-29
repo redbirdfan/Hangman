@@ -61,7 +61,8 @@ function App() {
           <Keyboard 
             activeLetters={guessedLetters.filter(letter => {
             wordToGuess.includes(letter)
-          )} 
+          }
+        )} 
             inactiveLetters={incorrectLetters}
             addGuessedLetter={addGuessedLetter}
           />
